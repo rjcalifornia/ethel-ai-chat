@@ -47,7 +47,7 @@ class _EthelChatState extends State<EthelChat> {
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               if (snapshot.data != null && snapshot.data!) {
-                return HomeScreen();
+                return const HomeScreen();
               } else {
                 return const IntroductionScreen();
               }
@@ -55,7 +55,7 @@ class _EthelChatState extends State<EthelChat> {
               return Container();
             }
           }),
-      routes: {'home': (context) => HomeScreen()},
+      routes: {'home': (context) => const HomeScreen()},
     );
   }
 }

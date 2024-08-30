@@ -37,13 +37,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 onPressed: () {
                   onItemTapped(0);
                 },
-                icon: Icon(Symbols.chat_bubble_outline_rounded)),
+                icon: const Icon(Symbols.chat_bubble_outline_rounded)),
             IconButton(
                 tooltip: 'App Settings',
                 onPressed: () {
                   onItemTapped(1);
                 },
-                icon: Icon(Symbols.settings))
+                icon: const Icon(Symbols.settings))
           ],
         ),
       ),
