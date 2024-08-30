@@ -60,7 +60,7 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
               child: ElevatedButton(
                 onPressed: () {
                   Navigator.of(context)
-                      .pushNamedAndRemoveUntil('app', (route) => false);
+                      .pushNamedAndRemoveUntil('home', (route) => false);
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: EthelColors.brand,

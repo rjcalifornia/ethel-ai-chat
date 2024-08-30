@@ -1,3 +1,4 @@
+import 'package:ethel_ai_chat/ui/screens/home.dart';
 import 'package:ethel_ai_chat/ui/screens/introduction.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -46,7 +47,7 @@ class _EthelChatState extends State<EthelChat> {
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               if (snapshot.data != null && snapshot.data!) {
-                return Container();
+                return HomeScreen();
               } else {
                 return const IntroductionScreen();
               }
@@ -54,6 +55,7 @@ class _EthelChatState extends State<EthelChat> {
               return Container();
             }
           }),
+      routes: {'home': (context) => HomeScreen()},
     );
   }
 }
