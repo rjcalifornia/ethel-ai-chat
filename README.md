@@ -1,6 +1,6 @@
-# ethel_ai_chat
+# Ethel | AI Chat app
 
-A new Flutter project.
+An Android and Desktop chat app for Ethel AI
 
 ## Getting Started
 
