@@ -33,17 +33,25 @@ class _HomeScreenState extends State<HomeScreen> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             IconButton(
-                tooltip: 'AI Chat',
-                onPressed: () {
-                  onItemTapped(0);
-                },
-                icon: const Icon(Symbols.chat_bubble_outline_rounded)),
+              tooltip: 'AI Chat',
+              onPressed: () {
+                onItemTapped(0);
+              },
+              icon: Icon(Symbols.mark_unread_chat_alt_rounded,
+                  color: currentIndex == 0
+                      ? EthelColors.selected
+                      : EthelColors.unselected),
+            ),
             IconButton(
-                tooltip: 'App Settings',
-                onPressed: () {
-                  onItemTapped(1);
-                },
-                icon: const Icon(Symbols.settings))
+              tooltip: 'App Settings',
+              onPressed: () {
+                onItemTapped(1);
+              },
+              icon: Icon(Symbols.manage_accounts_rounded,
+                  color: currentIndex == 1
+                      ? EthelColors.selected
+                      : EthelColors.unselected),
+            )
           ],
         ),
       ),

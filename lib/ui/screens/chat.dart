@@ -1,3 +1,4 @@
+import 'package:ethel_ai_chat/global.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
@@ -29,6 +30,9 @@ class _ChatScreenState extends State<ChatScreen> {
         body: Container(
           padding: const EdgeInsets.only(top: 30, left: 20, right: 20),
           child: Chat(
+            theme: const DefaultChatTheme(
+              inputBackgroundColor: EthelColors.buttonsColor,
+            ),
             messages: _messages,
             onSendPressed: _handleSendPressed,
             user: _user,
