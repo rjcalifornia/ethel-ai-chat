@@ -40,6 +40,9 @@ dependencies:
   material_symbols_icons: ^4.2784.0
   flutter_chat_ui: ^1.6.15
   http: ^1.2.2
+  intl: any
+  flutter_localizations:
+    sdk: flutter
 
 dev_dependencies:
   flutter_test:

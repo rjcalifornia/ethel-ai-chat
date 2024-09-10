@@ -3,6 +3,7 @@ import 'package:ethel_ai_chat/ui/screens/introduction.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() {
   runApp(const EthelChat());
@@ -42,6 +43,14 @@ class _EthelChatState extends State<EthelChat> {
         scaffoldBackgroundColor: const Color(0xffF3F5F6),
         textTheme: GoogleFonts.ralewayTextTheme(Theme.of(context).textTheme),
       ),
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: [
+        Locale('es'), // Spanish
+      ],
       home: FutureBuilder(
           future: verifyWelcome,
           builder: (context, snapshot) {

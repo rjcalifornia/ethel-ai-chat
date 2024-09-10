@@ -63,6 +63,9 @@ class _ChatScreenState extends State<ChatScreen> {
               inputBackgroundColor: EthelColors.brand,
             ),
             messages: _messages,
+            l10n: const ChatL10nEn(
+                inputPlaceholder: "Preguntale algo a la AI",
+                emptyChatPlaceholder: "Ethel AI"),
             typingIndicatorOptions: TypingIndicatorOptions(
                 typingUsers: test, animationSpeed: const Duration(seconds: 1)),
             onSendPressed: _handleSendPressed,
