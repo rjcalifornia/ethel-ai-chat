@@ -1,6 +1,7 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:ethel_ai_chat/global.dart';
+import 'package:ethel_ai_chat/ui/widgets/emptyState.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
@@ -63,6 +64,7 @@ class _ChatScreenState extends State<ChatScreen> {
               inputBackgroundColor: EthelColors.brand,
             ),
             messages: _messages,
+            emptyState: EmptyStateWidget(),
             l10n: const ChatL10nEn(
                 inputPlaceholder: "Preguntale algo a la AI",
                 emptyChatPlaceholder: "Ethel AI"),
