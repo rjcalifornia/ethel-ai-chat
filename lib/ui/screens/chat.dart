@@ -66,8 +66,8 @@ class _ChatScreenState extends State<ChatScreen> {
             messages: _messages,
             emptyState: EmptyStateWidget(),
             l10n: const ChatL10nEn(
-                inputPlaceholder: "Preguntale algo a la AI",
-                emptyChatPlaceholder: "Ethel AI"),
+              inputPlaceholder: "Preguntale algo a la AI",
+            ),
             typingIndicatorOptions: TypingIndicatorOptions(
                 typingUsers: test, animationSpeed: const Duration(seconds: 1)),
             onSendPressed: _handleSendPressed,
