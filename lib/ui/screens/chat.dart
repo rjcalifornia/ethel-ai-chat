@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:ethel_ai_chat/global.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -17,8 +19,9 @@ class ChatScreen extends StatefulWidget {
 class _ChatScreenState extends State<ChatScreen> {
   final List<types.Message> _messages = [];
   final _user = const types.User(id: '82091008-a484-4a89-ae75-a22bf8d6f3ac');
-  final ethelUser = const types.User(id: 'ui002');
-
+  final ethelUser = const types.User(
+      id: '2c7a057c-e9f5-411a-8ba1-0f7c7384a70b', firstName: 'Ethel AI');
+  List<types.User> test = [];
   String randomString() {
     final random = Random.secure();
     final values = List<int>.generate(16, (i) => random.nextInt(255));
@@ -26,6 +29,9 @@ class _ChatScreenState extends State<ChatScreen> {
   }
 
   Future<String> sendPrompt(dynamic query) async {
+    setState(() {
+      test.add(ethelUser);
+    });
     dynamic queryJson = await http.post(
         Uri.parse(
             'http://10.0.2.2:8000/api/v1/ethel-ia/full/procesar-consulta'),
@@ -39,6 +45,10 @@ class _ChatScreenState extends State<ChatScreen> {
 
     final queryParsed = json.decode(queryJson.body);
 
+    setState(() {
+      test.clear();
+    });
+
     return queryParsed['respuesta'].toString();
   }
 
@@ -50,11 +60,14 @@ class _ChatScreenState extends State<ChatScreen> {
           padding: const EdgeInsets.only(top: 30, left: 20, right: 20),
           child: Chat(
             theme: const DefaultChatTheme(
-              inputBackgroundColor: EthelColors.buttonsColor,
+              inputBackgroundColor: EthelColors.brand,
             ),
             messages: _messages,
+            typingIndicatorOptions: TypingIndicatorOptions(
+                typingUsers: test, animationSpeed: const Duration(seconds: 1)),
             onSendPressed: _handleSendPressed,
             user: _user,
+            showUserNames: true,
             showUserAvatars: true,
           ),
         ));
@@ -87,7 +100,6 @@ class _ChatScreenState extends State<ChatScreen> {
       );
       _addMessage(response);
     } catch (e) {
-      print(e);
       showDialog(
           barrierDismissible: false,
           context: context,
