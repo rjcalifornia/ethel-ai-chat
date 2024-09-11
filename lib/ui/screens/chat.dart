@@ -1,7 +1,7 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:ethel_ai_chat/global.dart';
-import 'package:ethel_ai_chat/ui/widgets/emptyState.dart';
+import 'package:ethel_ai_chat/ui/widgets/empty_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
@@ -40,17 +40,47 @@ class _ChatScreenState extends State<ChatScreen> {
         headers: {
           "Content-Type": "application/json; charset=utf-8",
           "Accept": "application/json",
-          'Authorization': '14dbd762-2487-4d13-9d97-58cbb8f95c89',
-          'Client': '6a696a4d-5d9d-402f-aac1-c7157655ca93',
+          'Authorization': 'bae447fd-a16c-46db-8fec-669c67b81830',
+          'Client': '1fb07eae-02b0-4c7f-aa9c-0423a25a2027',
         }).timeout(const Duration(minutes: 5));
 
-    final queryParsed = json.decode(queryJson.body);
+    dynamic status = queryJson.statusCode.toString();
+    print(status);
+    if (status != "200") {
+      showDialog(
+          barrierDismissible: false,
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: const Text("Atención"),
+              content: const Text("Hubo un problema al procesar la solicitud"),
+              surfaceTintColor: Colors.white,
+              actions: [
+                TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: const Text(
+                      "Aceptar",
+                      style: TextStyle(color: Colors.blue),
+                    ))
+              ],
+            );
+          });
 
-    setState(() {
-      test.clear();
-    });
+      setState(() {
+        test.clear();
+      });
+      return "No se pudo procesar la solicitud, contacte al proveedor del servicio.";
+    } else {
+      final queryParsed = json.decode(queryJson.body);
 
-    return queryParsed['respuesta'].toString();
+      setState(() {
+        test.clear();
+      });
+
+      return queryParsed['respuesta'].toString();
+    }
   }
 
   @override

@@ -63,7 +63,7 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
                       .pushNamedAndRemoveUntil('home', (route) => false);
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: EthelColors.buttonsColor,
+                  backgroundColor: EthelColors.brand,
                 ),
                 child: const Text(
                   "Iniciar ahora",
