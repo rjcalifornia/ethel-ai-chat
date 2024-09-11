@@ -29,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
       bottomNavigationBar: BottomAppBar(
         elevation: 40.0,
         shadowColor: Colors.black,
-        surfaceTintColor: Color(0xfff5f6f5),
+        surfaceTintColor: const Color(0xfff5f6f5),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [

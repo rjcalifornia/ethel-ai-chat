@@ -3,7 +3,9 @@
 import 'package:ethel_ai_chat/global.dart';
 import 'package:ethel_ai_chat/ui/widgets/empty_state.dart';
 import 'package:flutter/material.dart';
+// ignore: unnecessary_import
 import 'package:flutter/widgets.dart';
+// ignore: depend_on_referenced_packages
 import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
 import 'package:http/http.dart' as http;
 import 'package:flutter_chat_ui/flutter_chat_ui.dart';
@@ -85,28 +87,30 @@ class _ChatScreenState extends State<ChatScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: const Color(0xffFAFAFA),
-        body: Container(
-          padding: const EdgeInsets.only(top: 30, left: 20, right: 20),
-          child: Chat(
-            theme: const DefaultChatTheme(
-              inputBackgroundColor: EthelColors.brand,
-              backgroundColor: Color(0xffFAFAFA),
-            ),
-            messages: _messages,
-            emptyState: EmptyStateWidget(),
-            l10n: const ChatL10nEn(
-              inputPlaceholder: "Preguntale algo a la AI",
-            ),
-            typingIndicatorOptions: TypingIndicatorOptions(
-                typingUsers: test, animationSpeed: const Duration(seconds: 1)),
-            onSendPressed: _handleSendPressed,
-            user: _user,
-            showUserNames: true,
-            showUserAvatars: true,
-          ),
-        ));
+    return SafeArea(
+        child: Scaffold(
+            backgroundColor: const Color(0xffFAFAFA),
+            body: Container(
+              padding: const EdgeInsets.only(top: 30, left: 20, right: 20),
+              child: Chat(
+                theme: const DefaultChatTheme(
+                  inputBackgroundColor: EthelColors.brand,
+                  backgroundColor: Color(0xffFAFAFA),
+                ),
+                messages: _messages,
+                emptyState: EmptyStateWidget(),
+                l10n: const ChatL10nEn(
+                    inputPlaceholder: "Preguntale algo a la AI",
+                    isTyping: "está escribiendo..."),
+                typingIndicatorOptions: TypingIndicatorOptions(
+                    typingUsers: test,
+                    animationSpeed: const Duration(seconds: 1)),
+                onSendPressed: _handleSendPressed,
+                user: _user,
+                showUserNames: true,
+                showUserAvatars: true,
+              ),
+            )));
   }
 
   void _addMessage(types.Message message) {

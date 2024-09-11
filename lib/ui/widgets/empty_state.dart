@@ -10,10 +10,11 @@ class EmptyStateWidget extends StatefulWidget {
 class _EmptyStateWidgetState extends State<EmptyStateWidget> {
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return SingleChildScrollView(
+        child: Column(
       children: [
         const SizedBox(
-          height: 60,
+          height: 40,
         ),
         Center(
             child: Column(
@@ -23,14 +24,14 @@ class _EmptyStateWidgetState extends State<EmptyStateWidget> {
               child: Image.asset("images/ethel-ai-logo.png"),
             ),
             const SizedBox(
-              height: 40,
+              height: 10,
             ),
             const Text(
               "Ethel AI",
               style: TextStyle(fontSize: 28),
             ),
             const SizedBox(
-              height: 40,
+              height: 30,
             ),
             const Icon(
               Icons.book_outlined,
@@ -81,6 +82,6 @@ class _EmptyStateWidgetState extends State<EmptyStateWidget> {
           ],
         ))
       ],
-    );
+    ));
   }
 }

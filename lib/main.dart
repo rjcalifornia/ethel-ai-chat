@@ -43,12 +43,12 @@ class _EthelChatState extends State<EthelChat> {
         scaffoldBackgroundColor: const Color(0xffF3F5F6),
         textTheme: GoogleFonts.ralewayTextTheme(Theme.of(context).textTheme),
       ),
-      localizationsDelegates: [
+      localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      supportedLocales: [
+      supportedLocales: const [
         Locale('es'), // Spanish
       ],
       home: FutureBuilder(

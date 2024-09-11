@@ -75,7 +75,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               ),
               Card(
                 child: ExpansionTile(
-                  title: const Text("Ethel AI"),
+                  title: const Text("Ethel AI Chat"),
                   iconColor: EthelColors.selected,
                   collapsedIconColor: EthelColors.unselected,
                   children: [
