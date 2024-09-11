@@ -89,15 +89,15 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
             const SizedBox(
               height: 8,
             ),
-            SizedBox(
-              width: 380,
-              child: Text(
-                license_2,
-                textAlign: TextAlign.center,
-                style:
-                    const TextStyle(color: EthelColors.infoSmall, fontSize: 10),
-              ),
-            )
+            // SizedBox(
+            //   width: 380,
+            //   child: Text(
+            //     license_2,
+            //     textAlign: TextAlign.center,
+            //     style:
+            //         const TextStyle(color: EthelColors.infoSmall, fontSize: 10),
+            //   ),
+            // )
           ],
         ),
       ),
