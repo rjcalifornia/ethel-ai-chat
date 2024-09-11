@@ -21,13 +21,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
             "Configuración",
             style: TextStyle(
                 color: EthelColors.infoSmall,
-                fontSize: 20,
+                fontSize: 26,
                 fontWeight: FontWeight.bold),
           ),
           const SizedBox(
             height: 30,
           ),
           Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               ListTile(
                 title: const Column(
@@ -51,6 +52,52 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   color: EthelColors.unselected,
                 ),
                 onTap: () {},
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              Text(
+                'Acerca de',
+                style: Theme.of(context)
+                    .textTheme
+                    .titleLarge!
+                    .copyWith(color: Colors.black),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Card(
+                child: ExpansionTile(
+                  title: const Text("Ethel AI"),
+                  iconColor: EthelColors.selected,
+                  collapsedIconColor: EthelColors.unselected,
+                  children: [
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    Center(
+                      child: SizedBox(
+                        width: 100,
+                        child: Image.asset("images/ethel-ai-logo.png"),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 18,
+                    ),
+                    const Text(
+                      'Ethel AI Chat',
+                      style: TextStyle(color: Colors.black),
+                    ),
+                    const Text(
+                      'Build 09.11.2024.001',
+                      style: TextStyle(
+                          color: Colors.black, fontWeight: FontWeight.bold),
+                    ),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                  ],
+                ),
               )
             ],
           )
