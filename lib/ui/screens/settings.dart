@@ -1,4 +1,5 @@
 import 'package:ethel_ai_chat/global.dart';
+import 'package:ethel_ai_chat/ui/screens/select_model.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/link.dart';
 
@@ -54,7 +55,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   Icons.chevron_right_outlined,
                   color: EthelColors.unselected,
                 ),
-                onTap: () {},
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SelectModelScreen()),
+                ),
               ),
               const SizedBox(
                 height: 30,
