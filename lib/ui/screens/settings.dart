@@ -1,5 +1,6 @@
 import 'package:ethel_ai_chat/global.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/link.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -11,6 +12,8 @@ class SettingsScreen extends StatefulWidget {
 class _SettingsScreenState extends State<SettingsScreen> {
   @override
   Widget build(BuildContext context) {
+    final Uri url =
+        Uri.parse('https://github.com/rjcalifornia/KCalc/blob/master/LICENSE');
     return SafeArea(
         child: SingleChildScrollView(
       padding: const EdgeInsets.only(top: 40, bottom: 18, left: 20, right: 20),
@@ -95,6 +98,50 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     ),
                     const SizedBox(
                       height: 8,
+                    ),
+                    Link(
+                      uri: url,
+                      target: LinkTarget.blank,
+                      builder: (BuildContext ctx, FollowLink? openLink) {
+                        return TextButton.icon(
+                          onPressed: openLink,
+                          label: const Text(
+                            'Lee la licencia',
+                            style: TextStyle(color: EthelColors.brand),
+                          ),
+                          icon: const Icon(
+                            Icons.book_outlined,
+                            color: EthelColors.brand,
+                          ),
+                        );
+                      },
+                    ),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    SizedBox(
+                      width: 380,
+                      child: Text(
+                        license_1,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                            color: EthelColors.infoSmall, fontSize: 10),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    SizedBox(
+                      width: 380,
+                      child: Text(
+                        license_2,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                            color: EthelColors.infoSmall, fontSize: 10),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 16,
                     ),
                   ],
                 ),
