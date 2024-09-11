@@ -27,8 +27,9 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: EthelColors.mainBackground,
       body: screens.elementAt(currentIndex),
       bottomNavigationBar: BottomAppBar(
-        elevation: 48.0,
+        elevation: 40.0,
         shadowColor: Colors.black,
+        surfaceTintColor: Color(0xfff5f6f5),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
@@ -47,7 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
               onPressed: () {
                 onItemTapped(1);
               },
-              icon: Icon(Symbols.manage_accounts_rounded,
+              icon: Icon(Icons.settings_outlined,
                   color: currentIndex == 1
                       ? EthelColors.selected
                       : EthelColors.unselected),

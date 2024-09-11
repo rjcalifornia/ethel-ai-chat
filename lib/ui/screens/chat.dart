@@ -45,7 +45,7 @@ class _ChatScreenState extends State<ChatScreen> {
         }).timeout(const Duration(minutes: 5));
 
     dynamic status = queryJson.statusCode.toString();
-    print(status);
+
     if (status != "200") {
       showDialog(
           barrierDismissible: false,
@@ -86,12 +86,13 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: const Color(0xffFAFAFA),
         body: Container(
           padding: const EdgeInsets.only(top: 30, left: 20, right: 20),
           child: Chat(
             theme: const DefaultChatTheme(
               inputBackgroundColor: EthelColors.brand,
+              backgroundColor: Color(0xffFAFAFA),
             ),
             messages: _messages,
             emptyState: EmptyStateWidget(),
