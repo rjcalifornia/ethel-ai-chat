@@ -79,6 +79,7 @@ class _SelectModelScreenState extends State<SelectModelScreen> {
                 'El LLM más completo, entrenada con información hasta Junio de 2024 (Recomendado),',
                 style: TextStyle(color: EthelColors.infoSmall),
               ),
+              controlAffinity: ListTileControlAffinity.trailing,
             ),
             const SizedBox(
               height: 26,
@@ -107,6 +108,7 @@ class _SelectModelScreenState extends State<SelectModelScreen> {
                 'Altamente experimental. LLM en proceso de entrenamiento para adaptarlo a Latinoamérica. Usar con discreción.',
                 style: TextStyle(color: EthelColors.infoSmall),
               ),
+              controlAffinity: ListTileControlAffinity.trailing,
             ),
           ],
         ),
