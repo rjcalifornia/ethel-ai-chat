@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class EthelColors {
   static const brand = Color(0xff615EF0);
@@ -15,3 +16,8 @@ String license_1 =
 
 String license_2 =
     "Este programa se distribuye con la esperanza de que sea útil, pero SIN NINGUNA GARANTÍA; ni siquiera la garantía implícita de COMERCIABILIDAD o IDONEIDAD PARA UN PROPÓSITO PARTICULAR. Consulte la Licencia Pública General de GNU para obtener más detalles.";
+
+String ethelBasic =
+    "${dotenv.env['API_URL']}v1/ethel-ia/basic/procesar-consulta";
+
+String ethelFull = "${dotenv.env['API_URL']}v1/ethel-ia/full/procesar-consulta";

@@ -1,5 +1,6 @@
 // ignore_for_file: use_build_context_synchronously
 
+import 'package:ethel_ai_chat/classes/app_preferences.dart';
 import 'package:ethel_ai_chat/global.dart';
 import 'package:ethel_ai_chat/ui/widgets/empty_state.dart';
 import 'package:flutter/material.dart';
@@ -26,6 +27,9 @@ class _ChatScreenState extends State<ChatScreen> {
   final ethelUser = const types.User(
       id: '2c7a057c-e9f5-411a-8ba1-0f7c7384a70b', firstName: 'Ethel AI');
   List<types.User> test = [];
+
+  late String selectedModel;
+
   String randomString() {
     final random = Random.secure();
     final values = List<int>.generate(16, (i) => random.nextInt(255));
@@ -33,11 +37,18 @@ class _ChatScreenState extends State<ChatScreen> {
   }
 
   Future<String> sendPrompt(dynamic query) async {
+    dynamic url;
     setState(() {
       test.add(ethelUser);
     });
-    dynamic queryJson = await http.post(
-        Uri.parse("${dotenv.env['API_URL']}v1/ethel-ia/full/procesar-consulta"),
+    if (selectedModel == 'full') {
+      url = Uri.parse(ethelFull);
+    }
+    if (selectedModel == 'basic') {
+      url = Uri.parse(ethelBasic);
+    }
+
+    dynamic queryJson = await http.post(Uri.parse("$url"),
         body: json.encode({"pregunta": query.toString()}),
         headers: {
           "Content-Type": "application/json; charset=utf-8",
@@ -86,6 +97,12 @@ class _ChatScreenState extends State<ChatScreen> {
   }
 
   @override
+  void initState() {
+    selectedModel = AppPreferences.getModelSelected() ?? 'full';
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
@@ -130,7 +147,7 @@ class _ChatScreenState extends State<ChatScreen> {
     _addMessage(textMessage);
 
     try {
-      var answer;
+      dynamic answer;
       answer = await sendPrompt(message.text);
       final response = types.TextMessage(
         author: ethelUser,
@@ -151,7 +168,6 @@ class _ChatScreenState extends State<ChatScreen> {
               actions: [
                 TextButton(
                     onPressed: () {
-                      Navigator.of(context).pop();
                       Navigator.of(context).pop();
                     },
                     child: const Text(

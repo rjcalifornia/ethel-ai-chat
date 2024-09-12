@@ -1,4 +1,6 @@
+import 'package:ethel_ai_chat/classes/app_preferences.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SelectModelScreen extends StatefulWidget {
   const SelectModelScreen({super.key});
@@ -8,6 +10,19 @@ class SelectModelScreen extends StatefulWidget {
 }
 
 class _SelectModelScreenState extends State<SelectModelScreen> {
+  late String selectedModel;
+
+  void setModel(String modelName) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString("model_selected", modelName);
+  }
+
+  @override
+  void initState() {
+    selectedModel = AppPreferences.getModelSelected() ?? 'full';
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -23,7 +38,24 @@ class _SelectModelScreenState extends State<SelectModelScreen> {
               Navigator.pop(context);
             }),
       ),
-      body: SingleChildScrollView(),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            RadioListTile<String>(
+              value: 'full',
+              groupValue: selectedModel,
+              onChanged: (String? value) {
+                setState(() {
+                  selectedModel = value.toString();
+                });
+                setModel(value.toString());
+              },
+              title: const Text('Pickles'),
+              subtitle: const Text('Supporting text'),
+            ),
+          ],
+        ),
+      ),
     ));
   }
 }
