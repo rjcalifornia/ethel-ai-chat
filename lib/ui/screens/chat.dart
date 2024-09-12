@@ -11,6 +11,7 @@ import 'package:http/http.dart' as http;
 import 'package:flutter_chat_ui/flutter_chat_ui.dart';
 import 'dart:convert';
 import 'dart:math';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class ChatScreen extends StatefulWidget {
   const ChatScreen({super.key});
@@ -42,7 +43,7 @@ class _ChatScreenState extends State<ChatScreen> {
         headers: {
           "Content-Type": "application/json; charset=utf-8",
           "Accept": "application/json",
-          'Authorization': 'bae447fd-a16c-46db-8fec-669c67b81830',
+          'Authorization': dotenv.env['CLIENT_SECRET'].toString(),
           'Client': '1fb07eae-02b0-4c7f-aa9c-0423a25a2027',
         }).timeout(const Duration(minutes: 5));
 
