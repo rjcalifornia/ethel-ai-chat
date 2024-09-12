@@ -9,6 +9,7 @@ class EthelColors {
   static const selected = Color(0xff2A64D9);
   static const expenseBlue = Color(0xff2758ED);
   static const buttonsColor = Color(0xffFF405C);
+  static const hof = Color(0xff484848);
 }
 
 String license_1 =
