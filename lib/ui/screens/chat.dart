@@ -37,14 +37,13 @@ class _ChatScreenState extends State<ChatScreen> {
       test.add(ethelUser);
     });
     dynamic queryJson = await http.post(
-        Uri.parse(
-            'http://10.0.2.2:8000/api/v1/ethel-ia/full/procesar-consulta'),
+        Uri.parse("${dotenv.env['API_URL']}v1/ethel-ia/full/procesar-consulta"),
         body: json.encode({"pregunta": query.toString()}),
         headers: {
           "Content-Type": "application/json; charset=utf-8",
           "Accept": "application/json",
           'Authorization': dotenv.env['CLIENT_SECRET'].toString(),
-          'Client': '1fb07eae-02b0-4c7f-aa9c-0423a25a2027',
+          'Client': dotenv.env['CLIENT_ID'].toString(),
         }).timeout(const Duration(minutes: 5));
 
     dynamic status = queryJson.statusCode.toString();

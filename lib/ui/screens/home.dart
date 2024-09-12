@@ -38,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
               onPressed: () {
                 onItemTapped(0);
               },
-              icon: Icon(Symbols.mark_unread_chat_alt_rounded,
+              icon: Icon(Symbols.chat,
                   color: currentIndex == 0
                       ? EthelColors.selected
                       : EthelColors.unselected),
