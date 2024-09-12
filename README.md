@@ -1,4 +1,8 @@
 # Ethel AI Chat App
+<div style="text-align:center">
+<img src="images/preview.png" width="800">
+</div>
+</br>
 
 ### Prerequisitos Ambiente de desarrollo
  
