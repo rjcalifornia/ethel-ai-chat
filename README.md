@@ -1,16 +1,36 @@
-# Ethel | AI Chat app
+# Ethel AI Chat App
 
-An Android and Desktop chat app for Ethel AI
+### Prerequisitos Ambiente de desarrollo
+ 
+* Android Studio 4.1
+* Android SDK version 30.0.3
+* Dart SDK version: 3.3.3 (stable)
+* Flutter Channel stable, 3.19.5 (channel stable)
+* Visual Studio Code
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## Instalacion
 
-A few resources to get you started if this is your first Flutter project:
+* Con la consola de comandos (CLI), ejecutar el comando ``` flutter doctor ``` para verificar que cumple con todos los prerequisitos de Flutter
+* Clonar este repositorio
+* Copiar archivo ``` .env.example ``` como ``` .env ``` y configurar los endpoints correctamente
+* * Con la consola de comandos (CLI), ir a la carpeta root de la app y ejecutar el comando ``` flutter pub get ```. Esto instalara las librerias necesarias para el funcionamiento de la app
+* Una vez se haya terminado de instalar las librerias, ya podra ejecutar la App con Visual Studio
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Generar APK
+* Con la consola de comandos (CLI), ejecutar el comando ``` flutter build apk --release ``` para generar un APK de pruebas en dispositivos Android.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Graficos
+
+
+- Imagenes royalty free descargadas con cuenta premium de [Pixabay](https://pixabay.com/)
+* * Imagen de portada inicial por [Design Circle](https://www.flaticon.com/authors/design-circle/4)
+
+## Informacion Adicional:
+
+![alt text](https://raw.githubusercontent.com/flutter/website/archived-master/src/_assets/image/flutter-lockup-bg.jpg "Flutter")
+
+<b>Version 3.19.5</b> 
+
+#### Attribution-NonCommmercial-ShareAlike 4.0 International License
+[![License: CC BY-NC-SA 4.0](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
