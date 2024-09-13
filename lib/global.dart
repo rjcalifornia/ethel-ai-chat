@@ -22,3 +22,8 @@ String ethelBasic =
     "${dotenv.env['API_URL']}v1/ethel-ia/basic/procesar-consulta";
 
 String ethelFull = "${dotenv.env['API_URL']}v1/ethel-ia/full/procesar-consulta";
+
+String question1 = "¿Quien es el Presidente de El Salvador?";
+String question2 = "Dame el codigo para crear una funcion asincrona en NodeJS.";
+String question3 = "¿En que año se independizo El Salvador?";
+String question4 = "¿De qué están hechos los hot dogs?";

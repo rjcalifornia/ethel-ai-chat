@@ -161,15 +161,14 @@ class _ChatScreenState extends State<ChatScreen> {
                                           borderRadius:
                                               BorderRadius.circular(5.0)),
                                       backgroundColor: const Color(0xffF7F6F9)),
-                                  child: const Text(
-                                    "¿Quien es el Presidente de El Salvador?",
+                                  child: Text(
+                                    question1,
                                     textAlign: TextAlign.center,
-                                    style: TextStyle(color: Colors.black),
+                                    style: const TextStyle(color: Colors.black),
                                   ),
                                   onPressed: () {
-                                    _handleSendPressed(const types.PartialText(
-                                        text:
-                                            "¿Quien es el Presidente de El Salvador?"));
+                                    _handleSendPressed(
+                                        types.PartialText(text: question1));
                                   },
                                 )),
                             SizedBox(
@@ -181,20 +180,66 @@ class _ChatScreenState extends State<ChatScreen> {
                                           borderRadius:
                                               BorderRadius.circular(5.0)),
                                       backgroundColor: const Color(0xffF7F6F9)),
-                                  child: const Text(
-                                    "Dame el codigo para crear una funcion asincrona en NodeJS.",
+                                  child: Text(
+                                    question2,
                                     textAlign: TextAlign.center,
-                                    style: TextStyle(color: Colors.black),
+                                    style: const TextStyle(color: Colors.black),
                                   ),
                                   onPressed: () {
-                                    _handleSendPressed(const types.PartialText(
-                                      text:
-                                          "Dame el codigo para crear una funcion asincrona en NodeJS.",
+                                    _handleSendPressed(types.PartialText(
+                                      text: question2,
                                     ));
                                   },
                                 )),
                           ],
-                        )
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            SizedBox(
+                                width: 190,
+                                height: 88,
+                                child: TextButton(
+                                  style: TextButton.styleFrom(
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(5.0)),
+                                      backgroundColor: const Color(0xffF7F6F9)),
+                                  child: Text(
+                                    question3,
+                                    textAlign: TextAlign.center,
+                                    style: const TextStyle(color: Colors.black),
+                                  ),
+                                  onPressed: () {
+                                    _handleSendPressed(
+                                        types.PartialText(text: question3));
+                                  },
+                                )),
+                            SizedBox(
+                                width: 190,
+                                height: 88,
+                                child: TextButton(
+                                  style: TextButton.styleFrom(
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(5.0)),
+                                      backgroundColor: const Color(0xffF7F6F9)),
+                                  child: Text(
+                                    question4,
+                                    textAlign: TextAlign.center,
+                                    style: const TextStyle(color: Colors.black),
+                                  ),
+                                  onPressed: () {
+                                    _handleSendPressed(types.PartialText(
+                                      text: question4,
+                                    ));
+                                  },
+                                )),
+                          ],
+                        ),
                       ],
                     ))
                   ],
